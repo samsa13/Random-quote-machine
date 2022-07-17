@@ -1,0 +1,1 @@
+Random quote machine generate random quotes for you. It's a task from freeCodeCamp.org. I have learnt how to use ReactRedux and ReduxToolkit. It has passed all tests.

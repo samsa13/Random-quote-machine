@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Edu+TAS+Beginner&display=swap');
+
+
+
+$text-font: 'Dancing Script', cursive, sans-serif;
+$author-font: 'Edu TAS Beginner', cursive, sans-serif;
+$primary-backqround-color: #8FB299;
+$primary-font-color: rgb(19, 9, 1);
+$button-font-color: antiquewhite;
+$button-color: rgb(105, 95, 81);
+
+@mixin button ($size) {
+  float: right;
+  margin: 3rem -1rem;
+  font-family: $text-font;
+  font-size: $size;
+  color: $button-font-color;
+  background-color: $button-color;
+  transition: 0.6s;
+  border-radius: 1.5rem;
+  border: none;
+  padding: 1rem;
+
+  &:hover {
+    background-color: darken($button-color, 25);
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: $primary-backqround-color  !important;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+
+}
+
+
+@media screen and (min-width: 471px) {
+  wrapper {
+    box-sizing: border-box;
+    display: block;
+    max-width: 55rem;
+    padding: 1rem;
+    margin: 10% auto;
+    background-color: antiquewhite;
+    border-radius: 1.5rem;
+    text-align: center;
+
+
+
+    #text {
+      color: $primary-font-color;
+      font-family: $text-font;
+      font-size: 5rem;
+
+    }
+
+
+    #author {
+      font-family: $author-font;
+      font-size: 2.5rem;
+      text-align: end;
+      margin-top: 1rem;
+      padding-right: 4rem;
+    }
+
+
+
+    #new-quote,
+    #tweet-quote {
+      @include button(2.5rem);
+
+    }
+
+    #tweet-quote {
+      text-decoration: none;
+      margin-right: 3rem;
+    }
+
+    #tweet-quote::before {
+      content: "\f099";
+      font-family: FontAwesome;
+      color: $button-font-color;
+      font-size: 2.5rem;
+      margin-right: 1rem;
+    }
+
+  }
+}
+
+
+@media (max-width: 470px) {
+
+  wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 10% auto;
+    background-color: antiquewhite;
+    text-align: center;
+
+    #text {
+      color: $primary-font-color;
+      font-family: $text-font;
+      font-size: 3rem;
+      padding-top: 3rem;
+    }
+
+
+    #author {
+      font-family: $author-font;
+      font-size: 2rem;
+      margin-top: 1rem;
+
+    }
+
+    #new-quote,
+    #tweet-quote {
+      @include button(1.5rem);
+
+
+    }
+
+    #tweet-quote {
+      text-decoration: none;
+      margin-top: -2rem;
+    }
+
+    #tweet-quote::before {
+      content: "\f099";
+      font-family: FontAwesome;
+      color: $button-font-color;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+
+  }
+}
